@@ -1,18 +1,23 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import {Util } from '../Util/util.js';
 
 class Comment extends Component {
-
-  parseHtml(){
+  parseHtml() {
+    console.log(this)
     return {
       __html: this.props.children
     }
   }
 
+  showAuthor() {
+    this.alert(this.props.author);
+  }
 
-  render(){
+  render() {
     return (
       <div className="comment">
-        <h2 className="commentAuthor">
+        {this.props.seconds}
+        <h2 className="commentAuthor" onClick={this.showAuthor.bind(this)}>
           {this.props.author}
         </h2>
         <div dangerouslySetInnerHTML={this.parseHtml()}></div>
@@ -21,4 +26,4 @@ class Comment extends Component {
   }
 }
 
-export default Comment;
+export default Util (Comment);
