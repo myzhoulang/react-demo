@@ -15,6 +15,7 @@ class Comment extends Component {
         <h2 className="commentAuthor">
           {this.props.author}
         </h2>
+        // 使用dangerouslySetInnerHtml 解析HTML
         <div dangerouslySetInnerHTML={this.parseHtml()}></div>
       </div>
     );
