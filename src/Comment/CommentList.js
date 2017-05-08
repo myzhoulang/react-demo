@@ -7,15 +7,6 @@ class CommentList extends Component {
 
     this.state = {
       style:{
-        position:'absolute',
-        left:0,
-        top:0,
-        right:0,
-        bottom:0,
-        paddingTop:'300px',
-        background:'rgba(0,0,0,.5)',
-        color:'#fff',
-        textAlign:'center',
         display:'block'
       }
     }
@@ -38,9 +29,7 @@ class CommentList extends Component {
 
     return (
       <div className="commentList">
-
         <p style={this.state.style}>加载中......</p>
-
         {coments}
       </div>
     );

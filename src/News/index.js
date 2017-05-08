@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
-import CommentList from './CommentList';
-import CommentForm from './CommentForm';
-import './Comment.css';
+import NewsList from './NewsList';
 
-class CommentBox extends Component {
+class NewsBox extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      loading: true,
-      commentList: []
+      lists: []
     }
 
   }
 
-  commentList = [{
+ static lists = [{
     id:0,
     author: 'AAAA',
     comment:`那是 React 在保护你免受 <strong style="color:red">XSS</strong>攻击。有一个方法解决这个问题，
@@ -42,19 +39,10 @@ class CommentBox extends Component {
   }];
 
   getList(){
-    this.setState({loading : true});
-    setTimeout(() => {
-      var end = Math.ceil(Math.random()*(this.commentList.length - 0)) || 1;
-      this.setState({
-        commentList:this.commentList.slice(0, end),
-        loading : false
-      });
-    }, 1000);
-  }
-
-  refresh(){
-    console.log(this)
-    this.getList();
+    console.log(NewsBox.lists)
+    this.setState({
+        lists: NewsBox.lists
+    });
   }
 
   componentDidMount(){
@@ -65,12 +53,10 @@ class CommentBox extends Component {
     return (
       <div>
         <h1>Comments</h1>
-        <CommentList data={this.state.commentList} loading={this.state.loading}/>
-        <button onClick={this.refresh.bind(this)}>刷新</button>
-        <CommentForm />
+        <NewsList data={this.state.lists}/>
       </div>
     )
   }
 }
 
-export default CommentBox;
+export default NewsBox;
