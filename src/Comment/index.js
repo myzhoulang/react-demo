@@ -44,9 +44,9 @@ class CommentBox extends Component {
   getList(){
     this.setState({loading : true});
     setTimeout(() => {
-      var end = Math.ceil(Math.random()*(this.commentList.length - 0)) || 1;
+      var end = 1//Math.ceil(Math.random()*(this.commentList.length - 0)) || 1;
       this.setState({
-        commentList:this.commentList.slice(0, end),
+        commentList: this.commentList.slice(0, end),
         loading : false
       });
     }, 1000);
