@@ -2,22 +2,25 @@ import React, { Component } from 'react';
 import {Util } from '../Util/util.js';
 
 class Comment extends Component {
+  constructor(props){
+    super(...props);
+    this._showAuthor = this.showAuthor.bind(this);
+  }
   parseHtml() {
-    console.log(this)
     return {
       __html: this.props.children
     }
   }
 
   showAuthor() {
-    this.alert(this.props.author);
+    alert(this.props.author);
   }
 
   render() {
     return (
       <div className="comment">
         {this.props.seconds}
-        <h2 className="commentAuthor" onClick={this.showAuthor.bind(this)}>
+        <h2 className="commentAuthor" onClick={this._showAuthor}>
           {this.props.author}
         </h2>
         // 使用dangerouslySetInnerHtml 解析HTML
