@@ -2,21 +2,20 @@ import React, {Component} from 'react';
 
 class NewsList extends Component {
 
-  componentWillReceiveProps(nextProps){
-    
-  }
+  componentWillReceiveProps(nextProps) {}
 
-  render(){
-    var news = this.props.data.map((item)=>{
+  render() {
+    var news = this.props.data.map((item) => {
       return (
-        <li key={item.id}>{item.comment}</li>
-      )
+        <li key={item.id}>
+          {item.comment}
+        </li>
+      );
     })
 
     return (
       <div className="commentList">
-        {news}
-      </div>
+        {news}</div>
     );
   }
 }

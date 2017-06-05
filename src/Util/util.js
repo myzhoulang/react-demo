@@ -12,7 +12,7 @@ export let Util = ComponsedComponent => class extends React.Component {
 
   // 3
   componentDidMount() {
-   // this.interval = setInterval(this.tick.bind(this), 1000);
+    // this.interval = setInterval(this.tick.bind(this), 1000);
   }
 
   // 3
@@ -33,6 +33,6 @@ export let Util = ComponsedComponent => class extends React.Component {
     // console.log(b)
     // console.log(c)
     // 4
-    return <ComponsedComponent {...this.props} {...this.state} />;
+    return <ComponsedComponent {...this.props} {...this.state}/>;
   }
 };

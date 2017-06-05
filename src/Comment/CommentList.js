@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Comment from './Comment';
 import PropTypes from 'prop-types';
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
@@ -19,21 +19,13 @@ class CommentList extends Component {
     data: PropTypes.array.isRequired
   }
 
-<<<<<<< HEAD
-  shouldComponentUpdate(nextProps, nextState){
+  shouldComponentUpdate(nextProps, nextState) {
     return nextState.data !== this.state.data
   }
 
-  componentWillReceiveProps(nextProps){
-=======
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   return nextState.data !== this.state.data
-  // }
->>>>>>> 1c9c31c800047a836796afae9271c1c2a37cf245
-
   componentWillReceiveProps(nextProps) {
     if (this.props.data !== nextProps.data) {
-      this.setState({ data: nextProps.data });
+      this.setState({data: nextProps.data});
     }
 
     // if(this.props.loading !== nextProps.loading){

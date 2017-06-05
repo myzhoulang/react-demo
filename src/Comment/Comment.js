@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
-import {Util } from '../Util/util.js';
+import React, {Component} from 'react';
+import {Util} from '../Util/util.js';
 
 class Comment extends Component {
-  constructor(props){
+  constructor(props) {
     super(...props);
     this._showAuthor = this.showAuthor.bind(this);
   }
   parseHtml() {
-    return {
-      __html: this.props.children
-    }
+    return {__html: this.props.children}
   }
 
   showAuthor() {
@@ -30,4 +28,4 @@ class Comment extends Component {
   }
 }
 
-export default Util (Comment);
+export default Util(Comment);

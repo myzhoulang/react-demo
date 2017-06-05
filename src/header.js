@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import "./header.css";
 
-class Header extends Component{
-  
-  render (){
+class Header extends Component {
+
+  render() {
     return (
       <header className="header">
         top
