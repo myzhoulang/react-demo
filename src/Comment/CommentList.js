@@ -21,9 +21,9 @@ class CommentList extends Component {
     data: PropTypes.array.isRequired
   }
 
-shouldComponentUpdate(nextProps, nextState){
-  return nextState.data !== this.state.data
-}
+  shouldComponentUpdate(nextProps, nextState){
+    return nextState.data !== this.state.data
+  }
 
   componentWillReceiveProps(nextProps){
 
@@ -45,8 +45,6 @@ shouldComponentUpdate(nextProps, nextState){
         <Comment author={item.author} key={item.id}>{item.comment}</Comment>
       )
     })
-
-    console.log(1)
 
     return (
       <div className="commentList">
