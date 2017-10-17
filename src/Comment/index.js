@@ -18,44 +18,43 @@ class CommentBox extends Component {
     }
   }
 
-  getList(){
-    fetch('/ajax/data/realtime?key=d672ea80170454d92cb2494b43113c55')
-    .then((response) => response.json())
-    .then((response) => CommentStore.dispatch(CommentActions.showAll(response.result.result)))
+  getList() {
+    fetch('/ajax/data/realtime?key=d672ea80170454d92cb2494b43113c55').then((response) => response.json()).then((response) => CommentStore.dispatch(CommentActions.showAll(response.result.result)))
   }
 
-  refresh(){
+  refresh() {
     this.getList();
   }
 
-  componentDidMount(){
-    console.log(this.refs.commentList)
-    console.log(ReactDOM.findDOMNode(this.refs.commentList));
-
+  componentDidMount() {
     this.getList();
     CommentStore.subscribe(() => {
-      this.setState({
-        commentList: CommentStore.getState().commentList
-      })
+      this.setState({commentList: CommentStore.getState().commentList})
     })
   }
 
-  addComment(){
+  addComment() {
     var action = CommentActions.addComment({author: "xxxx", comment: "test"})
     CommentStore.dispatch(action);
   }
 
-  render(){
+  render() {
     return (
-      <div>
-        <h1>Comments</h1>
-        <p><button onClick={this.addComment.bind(this)}>添加comment</button></p>
-        <CommentList ref="commentList" data={this.state.commentList} loading={this.state.loading}/>
-        <button onClick={this.refresh.bind(this)}>刷新</button>
-        <CommentForm />
+      <div >
+        <h1>
+          Comments
+        </h1>
+        <p>
+          <button onClick={this.addComment.bind(this)}>
+            添加comment
+          </button>
+        </p>
+        <CommentList data={this.state.commentList} loading={this.state.loading}/>
+        <button onClick={this.refresh.bind(this)}>
+          刷新
+        </button>
+        <CommentForm/>
       </div>
     )
   }
 }
-
-export default CommentBox;

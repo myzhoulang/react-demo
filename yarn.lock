@@ -2250,6 +2250,7 @@ fb-watchman@^1.8.0, fb-watchman@^1.9.0:
   dependencies:
     bser "1.0.2"
 
+<<<<<<< HEAD
 fbjs@^0.8.15, fbjs@^0.8.16:
   version "0.8.16"
   resolved "http://registry.npm.taobao.org/fbjs/download/fbjs-0.8.16.tgz#5e67432f550dc41b572bf55847b8aca64e5337db"
@@ -2263,6 +2264,9 @@ fbjs@^0.8.15, fbjs@^0.8.16:
     ua-parser-js "^0.7.9"
 
 fbjs@^0.8.9:
+=======
+fbjs@^0.8.4, fbjs@^0.8.9:
+>>>>>>> ebc00ad12d395e5092adecc13336830545786694
   version "0.8.12"
   resolved "http://registry.npm.taobao.org/fbjs/download/fbjs-0.8.12.tgz#10b5d92f76d45575fd63a217d4ea02bea2f8ed04"
   dependencies:
@@ -4879,10 +4883,11 @@ rc@^1.1.7:
     strip-json-comments "~2.0.1"
 
 react-addons-css-transition-group@^15.5.2:
-  version "15.6.2"
-  resolved "http://registry.npm.taobao.org/react-addons-css-transition-group/download/react-addons-css-transition-group-15.6.2.tgz#9e4376bcf40b5217d14ec68553081cee4b08a6d6"
+  version "15.5.2"
+  resolved "https://registry.yarnpkg.com/react-addons-css-transition-group/-/react-addons-css-transition-group-15.5.2.tgz#ea7e0a9f0e1c27ca426da4efd3559915bd42ead2"
   dependencies:
-    react-transition-group "^1.2.0"
+    fbjs "^0.8.4"
+    object-assign "^4.1.0"
 
 react-dev-utils@^0.5.2:
   version "0.5.2"

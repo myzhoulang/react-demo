@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 // import ReactDOM from "react-dom";
-// import { Util } from '../Util/util.js';
+import { Util } from '../Util/util.js';
 
 class Comment extends Component {
-  constructor(props){
+  constructor(props) {
     super(...props);
     this._showAuthor = this.showAuthor.bind(this);
   }
   parseHtml() {
-    return {
-      __html: this.props.children
-    }
+    return {__html: this.props.children}
   }
 
   showAuthor() {
@@ -25,10 +23,11 @@ class Comment extends Component {
         <h2 className="commentAuthor"  onClick={this._showAuthor}>
           {this.props.author}
         </h2>
+        // 使用dangerouslySetInnerHtml 解析HTML
         <div dangerouslySetInnerHTML={this.parseHtml()}></div>
       </div>
     );
   }
 }
 
-export default Comment;
+export default Util(Comment);

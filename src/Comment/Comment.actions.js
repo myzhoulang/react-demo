@@ -1,4 +1,5 @@
 var id = 1;
+
 function addComment(comment) {
   return {
     type: 'ADD_COMMENT',
@@ -10,9 +11,9 @@ function addComment(comment) {
   }
 }
 
-function showAll(comments){
+function showAll(comments) {
   return {
-    type:'SHOW_ALL',
+    type: 'SHOW_ALL',
     payload: comments
   }
 }

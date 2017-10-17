@@ -1,4 +1,6 @@
-import { createStore } from 'redux';
+import {
+  createStore
+} from 'redux';
 
 let initState = {
   counter: 0,
