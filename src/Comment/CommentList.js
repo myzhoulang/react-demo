@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Comment from './Comment';
 import PropTypes from 'prop-types';
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import ReactDOM from 'react-dom';
 
 class CommentList extends Component {
   constructor(props) {

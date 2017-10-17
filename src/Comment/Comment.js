@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import ReactDOM from "react-dom";
-import { Util } from '../Util/util.js';
+import  Util  from '../Util/util';
 
 class Comment extends Component {
   constructor(props) {
@@ -23,11 +23,10 @@ class Comment extends Component {
         <h2 className="commentAuthor"  onClick={this._showAuthor}>
           {this.props.author}
         </h2>
-        // 使用dangerouslySetInnerHtml 解析HTML
         <div dangerouslySetInnerHTML={this.parseHtml()}></div>
       </div>
     );
   }
 }
-
-export default Util(Comment);
+Comment = Util(Comment)
+export default Comment;
