@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import ReactDOM from "react-dom";
 import CommentList from './CommentList';
 import CommentForm from './CommentForm';
 import CommentActions from './Comment.actions';
 import CommentStore from './Comment.store';
-import './Comment.css';
+import './Comment.scss';
 
 class CommentBox extends Component {
   constructor(props) {
     super(props)
+
+    console.log(props)
 
     this.state = {
       loading: true,
@@ -26,6 +29,9 @@ class CommentBox extends Component {
   }
 
   componentDidMount(){
+    console.log(this.refs.commentList)
+    console.log(ReactDOM.findDOMNode(this.refs.commentList));
+
     this.getList();
     CommentStore.subscribe(() => {
       this.setState({
@@ -44,7 +50,7 @@ class CommentBox extends Component {
       <div>
         <h1>Comments</h1>
         <p><button onClick={this.addComment.bind(this)}>添加comment</button></p>
-        <CommentList data={this.state.commentList} loading={this.state.loading}/>
+        <CommentList ref="commentList" data={this.state.commentList} loading={this.state.loading}/>
         <button onClick={this.refresh.bind(this)}>刷新</button>
         <CommentForm />
       </div>

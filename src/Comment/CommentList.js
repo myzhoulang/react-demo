@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from "react-dom";
 import Comment from './Comment';
 import PropTypes from 'prop-types';
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
@@ -25,14 +26,23 @@ class CommentList extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.data !== nextProps.data) {
-      this.setState({ data: nextProps.data });
+      this.setState({
+        data: nextProps.data
+      });
     }
 
-    // if(this.props.loading !== nextProps.loading){
-    //   var newStyle = Object.assign({}, this.state.style)
-    //   newStyle.display = nextProps.loading?'block':'none'
-    //   this.setState({style:newStyle});
-    // }
+  // if(this.props.loading !== nextProps.loading){
+  //   var newStyle = Object.assign({}, this.state.style)
+  //   newStyle.display = nextProps.loading?'block':'none'
+  //   this.setState({style:newStyle});
+  // }
+  }
+
+  componentDidMount() {
+
+    console.log(this.refs.comment);
+    console.log(this.refs.comment === ReactDOM.findDOMNode(this.refs.comment))
+
   }
 
   render() {
@@ -44,7 +54,7 @@ class CommentList extends Component {
 
     return (
       <div className="commentList">
-        <ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+        <ReactCSSTransitionGroup  ref="comment" transitionName="example" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
           {coments}
         </ReactCSSTransitionGroup>
       </div>

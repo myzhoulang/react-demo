@@ -1,12 +1,12 @@
 import { createStore } from 'redux';
 
 let initState = {
-  counter : 0,
+  counter: 0,
   commentList: []
 }
-function reducer(state = initState, action){
+function reducer(state = initState, action) {
   var nextState = Object.assign({}, state);
-  switch (action.type){
+  switch (action.type) {
     case "ADD_COMMENT":
       nextState.commentList.unshift(action.payload);
       return nextState;
@@ -14,7 +14,7 @@ function reducer(state = initState, action){
     case "SHOW_ALL":
       nextState.commentList = action.payload;
       return nextState;
-    default: 
+    default:
       return state;
   }
 }

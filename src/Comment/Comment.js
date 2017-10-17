@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Util } from '../Util/util.js';
+// import ReactDOM from "react-dom";
+// import { Util } from '../Util/util.js';
 
 class Comment extends Component {
   constructor(props){
@@ -16,11 +17,12 @@ class Comment extends Component {
     alert(this.props.author);
   }
 
+
   render() {
     return (
       <div className="comment">
         {this.props.seconds}
-        <h2 className="commentAuthor" onClick={this._showAuthor}>
+        <h2 className="commentAuthor"  onClick={this._showAuthor}>
           {this.props.author}
         </h2>
         <div dangerouslySetInnerHTML={this.parseHtml()}></div>
@@ -29,4 +31,4 @@ class Comment extends Component {
   }
 }
 
-export default Util (Comment);
+export default Comment;

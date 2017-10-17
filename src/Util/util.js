@@ -2,7 +2,7 @@ import React from 'react';
 
 // 1
 export let Util = ComponsedComponent => class extends React.Component {
-
+ 
   constructor(props) {
     super(props);
     this.state = {
@@ -27,7 +27,7 @@ export let Util = ComponsedComponent => class extends React.Component {
   }
 
   render() {
-
+  console.log(ComponsedComponent);
     // let {a, b, ...c} = {a:1, b:2, c:3, d:4};
     // console.log(a)
     // console.log(b)
